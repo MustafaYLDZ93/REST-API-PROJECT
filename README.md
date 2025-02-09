@@ -1,164 +1,140 @@
-# REST-API-PROJECT #
+REST API PROJECT 
 
-Aşağıdaki gibi bir proje yapısı oluşturulmuştur:
+PROJE YAPISI
+```
+├── login-site/
+│   ├── src/
+│   │   ├── app.ts
+│   │   ├── controllers/
+│   │   │   ├── authController.ts
+│   │   │   ├── cartController.ts
+│   │   │   └── productController.ts
+│   │   ├── public/
+│   │   │   ├── css/
+│   │   │   │   └── styles.css
+│   │   │   └── js/
+│   │   │       └── scripts.js
+│   │   ├── routes/
+│   │   │   └── authRoutes.ts
+│   │   ├── services/
+│   │   │   ├── authService.ts
+│   │   │   ├── cartService.ts
+│   │   │   └── productService.ts
+│   │   ├── types/
+│   │   │   └── index.ts
+│   │   ├── views/
+│   │   │   ├── login.ejs
+│   │   │   └── products-cart.ejs
+│   │  
+├── tests/
+│   ├── authController.test.ts
+│   ├── cartController.test.ts
+│   ├── productController.test.ts
+│   └── register-validasyon.test.ts
+├── package.json
+├── swagger.json
+├── tsconfig.json
+├── jest.config.js
+└── users.json
+```
 
-Project Structure
-
-<img width="273" alt="Ekran Resmi 2025-02-09 14 43 35" src="https://github.com/user-attachments/assets/0809f241-f271-441d-9430-082bc535db1b" />
--------------------------------
-Kullanılan Teknolojiler ve Araçlar
-
-Express.js
-
-RESTful API sunucusunu oluşturmak için kullanılan popüler bir Node.js framework'üdür.
-
-Hızlı, minimal ve genişletilebilir bir yapı sağlar.
-
-Kaynakları yönetmek için CRUD (Oluşturma, Okuma, Güncelleme, Silme) işlemlerini uygular.
-
-Ölçeklenebilirlik ve sürdürülebilirlik için modüler ve düzenli bir kod yapısına sahiptir.
-
-JWT (JSON Web Token) ile beraber Password Hashing (bcryptjs) yöntemleri ile entegre edilmiştir.
-----------------------
-
-
-
-----------------
-
-Ana Dosyalar ve Yapı
-- src/app.ts:
-
-Express.js uygulamasının ana giriş noktasıdır.
-Sunucunun yapılandırılması, middleware'lerin eklenmesi ve rotaların ayarlanması burada yapılır.
-Swagger dokümantasyonu için gerekli ayarları içerir.
-Sunucu belirtilen portta dinlemeye başlar.
-
-
-- src/routes/authRoutes.ts:
-Kimlik doğrulama ve diğer rotaları ayarlayan fonksiyonu içerir.
-İsteklerin hangi kontrolcü metoduna yönlendirileceği burada belirlenir.
-
-
-- src/controllers/authController.ts:
-Kullanıcı kimlik doğrulama işlemlerini yöneten kontrolcü sınıfını içerir.
-Kullanıcı giriş işlemi, kullanıcı ekleme, kullanıcı güncelleme ve silme işlemleri burada tanımlanır.
+![Ekran Resmi 2025-02-09 15 37 29](https://github.com/user-attachments/assets/8f9ba937-bf76-49c3-8190-e06f118da53a)
 
 
--src/controllers/cartController.ts:
-Sepet işlemlerini yöneten kontrolcü sınıfını içerir.
-Ürün ekleme ve sepeti getirme işlemleri burada tanımlanır.
 
 
--src/controllers/productController.ts:
-Ürün işlemlerini yöneten kontrolcü sınıfını içerir.
-Ürünleri getirme işlemi burada tanımlanır.
 
 
--src/services/authService.ts:
-Kullanıcı kimlik doğrulama işlemlerini gerçekleştiren servis sınıfını içerir.
-Veritabanı veya dosya sistemi ile etkileşim burada gerçekleştirilir.
-Kullanıcı doğrulama, kullanıcı ekleme, güncelleme ve silme işlemleri burada tanımlanır.
+### Kullanılan Teknolojiler ve Araçlar
 
--src/services/cartService.ts:
-Sepet işlemlerini gerçekleştiren servis sınıfını içerir.
-Sepete ürün ekleme ve sepeti getirme işlemleri burada tanımlanır.
-
-
--src/services/productService.ts:
-Ürün işlemlerini gerçekleştiren servis sınıfını içerir.
-Ürünleri getirme işlemi burada tanımlanır.
+1. **Express.js**  
+   - RESTful API sunucusunu oluşturmak için kullanılan popüler bir Node.js framework'üdür.
+   - Hızlı, minimal ve genişletilebilir bir yapı sağlar.
+   - Kaynakları yönetmek için CRUD (Oluşturma, Okuma, Güncelleme, Silme) işlemlerini uygular.
+   - Ölçeklenebilirlik ve sürdürülebilirlik için modüler ve düzenli bir kod yapısına sahiptir.
+   - JWT (JSON Web Token) ile beraber Password Hashing (bcryptjs) yöntemleri ile entegre edilmiştir.
 
 
--src/types/index.ts:
-Uygulama genelinde kullanılacak olan türleri ve arayüzleri tanımlar.
-
--src/views/login.ejs:
-Kullanıcı giriş formunu içeren EJS (Embedded JavaScript) şablon dosyasıdır.
-Kullanıcıdan kullanıcı adı ve şifre bilgilerini toplar.
+   
+     -------------------------------
 
 
--src/views/products-cart.ejs:
-Kullanıcı profil sayfasını içeren EJS şablon dosyasıdır.
-Ürünleri ve sepeti görüntüler.
+2. **Jest & SuperTest**  
+   - Jest: JavaScript test framework'ü.
+   - API endpoint'lerini test etmek için kullanılır.
+   - SuperTest: HTTP isteklerini simüle ederek endpoint'leri test eder.
+   - Komut satırından testleri otomatize eder. (Postman'de koleksiyondaki testleri Run etme gibi) 
+   - Ayrıntılı bir HTML test raporu oluşturur.
+  
+
+    
 
 
--src/public/js/scripts.js:
-Giriş formunun işlevselliğini sağlayan JavaScript dosyasıdır.
-Form gönderildiğinde, JavaScript ile POST isteği yapılır ve sunucudan gelen yanıt işlenir.
+      ![Ekran Resmi 2025-01-27 19 56 41](https://github.com/user-attachments/assets/cf97cc0a-2f24-4e5e-bb57-be3fa1c76b5a)
 
--src/public/css/styles.css:
-Uygulamanın stil dosyasıdır.
-Giriş sayfasının görünümünü düzenler.
+     
 
+     ![1*TP2ax7dQQXxkfS2nDo0YXg](https://github.com/user-attachments/assets/f3d13eb4-964b-42a1-aaa3-0dfa219341bc)
 
---Test Dosyaları--
-tests/authController.test.ts:
-
-AuthController sınıfının testlerini içerir.
-Kullanıcı giriş işlemi ve kullanıcı bilgilerini getirme işlemlerini test eder.
+     -------------------------------
 
 
-tests/cartController.test.ts:
-CartController sınıfının testlerini içerir.
-Sepete ürün ekleme ve sepeti getirme işlemlerini test eder.
 
 
-tests/register-validasyon.test.ts:
-Kullanıcı kayıt işlemlerinin validasyon testlerini içerir.
-Kullanıcı adı ve şifre validasyonlarını test eder.
+4. **Swagger UI**  
+   - Swagger UI kullanılarak oluşturulan etkileşimli API dokümantasyonu.
+   - API dökümantasyonlarını görselleştirmek için kullanılır.
+   - API'yi hem dökümante eder hem de kullanıcıların interaktif olarak test etmesine olanak sağlar.
 
 
---Diğer Dosyalar--
--swagger.json:
+      
+     ![Ekran Resmi 2025-02-09 17 02 48](https://github.com/user-attachments/assets/9e25a691-27f9-44b8-968a-c2761d114319)
 
-API dokümantasyonunu içeren Swagger dosyasıdır.
-API uç noktalarını ve istek/yanıt yapılarını tanımlar.
+   
+   
+     
 
+---------------------------------
 
--package.json:
-Projenin bağımlılıklarını ve script'lerini listeler.
-Proje bilgilerini içerir.
+## Kurulum ve Çalıştırma ##
 
+### Gerekli Bağımlılıkların Yüklenmesi
+Projeyi klonladıktan sonra aşağıdaki komutları çalıştırarak bağımlılıkları yükleyebilirsiniz:
+```
+npm install
+```
+----------
 
--tsconfig.json:
-TypeScript için yapılandırma dosyasıdır.
-Derleyici seçeneklerini ve derleme için dahil edilecek dosyaları belirtir.
-
-
--users.json:
-Kullanıcı verilerini içeren JSON dosyasıdır.
-Kullanıcı bilgilerini saklar.
-
--------------
-
-#nodemon, dosya değişikliklerini izler ve sunucuyu otomatik olarak yeniden başlatır.
-
-npm install --save-dev nodemon
-
-package.json dosyanızda scripts bölümünü güncelleyin:
-
-{
-  "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js"
-  }
-}
-
---
-
-Projenizde ts-node kullanarak TypeScript dosyalarını çalıştırdığımız için, 
-nodemon komutunu ts-node ile birlikte kullanmanız gerekecek. src/app.ts dosyasını
-kullanarak nodemon komutunu güncelleyebilirsiniz.
-
-"scripts": {
-    "start": "ts-node src/app.ts",
-    "dev": "nodemon --exec ts-node src/app.ts",
-    "test": "jest"
-  },
-
--
-Sunucuyu geliştirme modunda başlatmak için şu komutu kullanın:
-
+### Sunucuyu Çalıştırma
+Express sunucusunu başlatın (Nodemon ile):
+```
 npm run dev
+```
+Normal
+```
+npm start
+```
 
----------
+
+Sunucu varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.
+
+------------
+### Testleri Çalıştırma
+Test senaryolarını çalıştırın:
+```
+npm jest
+```
+
+Testlerin ardından (eğer yapılandırılmışsa) `test-report.html` dosyasında bir HTML raporu oluşturulacaktır.
+
+------------
+
+### API Dokümantasyonu
+Swagger UI dokümantasyonuna aşağıdakine benzer bağlantıdan erişebilirsiniz:
+```
+http://localhost:3000/api-docs
+```
+-----------------
+
+NOT:
+Bu proje başlangıç seviyesinde temel RESTful API sunucusu oluşturma ve oluşturulan API leri Postman ve Jest ile test etme amacı ile yazılmıştır.Veritabanı (MySQL, PostgreSQL, MongoDB gibi) kullanılmamıştır.Veriler bi json dosyasından kullanılmaktadır.Proje'ye bunu göz önünde bulundurarak bakınız.Proje büyüdüğünde ve komplike hale geldiğinde .json dosyası yerine bi veritabanı ile (MySQL, PostgreSQL, MongoDB gibi) entegre edilip sunucu kullanılır.
