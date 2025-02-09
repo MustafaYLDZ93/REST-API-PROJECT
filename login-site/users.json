@@ -1,0 +1,54 @@
+{
+  "users": [
+    {
+      "id": 1738333137366,
+      "username": "newuser1234",
+      "password": "$2b$10$oK4KV6aKf2xe4KHWl.w4Ye45VljHR4SQWUhejmHDZMS2tDcAshQPu"
+    },
+    {
+      "id": 1738333409276,
+      "username": "admin1234",
+      "password": "$2b$10$1eQzHY9QgO/HUQ.ru6xBfub0HKJzY2nKAX2.WF5nGWmQDjJ.GrMeu"
+    },
+    {
+      "id": 1738336944383,
+      "username": "admin999",
+      "password": "$2b$10$Moi9kL3QwtW26p/E6o1IjepwvmncL.XXg62XJ9q0ZCvO/L1u.MYIS"
+    },
+    {
+      "id": 1738337371210,
+      "username": "admin1234567",
+      "password": "$2b$10$1noiUS510vtfYv0FvqWXledW0fsWly8fCo4micJE4z8e8IgSGgAMK"
+    },
+    {
+      "id": 1738338245690,
+      "username": "admin12345",
+      "password": "$2b$10$IMPwGqT8vlU5/kuByhfoPePL4ZZeCrA64PhC3TUzS26KlYUY/yZW6"
+    },
+    {
+      "id": 1738338757422,
+      "username": "admin333",
+      "password": "$2b$10$/WIaI3wim0v2gRSgIC4ROuLULQn/rNEX5.NU9XjB1JBDAAO0oja0G"
+    },
+    {
+      "id": 1738339032730,
+      "username": "admin001",
+      "password": "$2b$10$kkUzpVC237jexCASk1hwzePZsAex8oWM3.WBCJNqB8M9fo4dALDrW"
+    },
+    {
+      "id": 1738399498058,
+      "username": "admin88",
+      "password": "$2b$10$Ss/1mBXUIRva6Id8N2NGquMf/5r86D/bfFHZm/npIbXBFdQ5n1J.2"
+    },
+    {
+      "id": 1738501262159,
+      "username": "admin0009",
+      "password": "$2b$10$UI//NLNjG03aYgUQN2yqReBYQw5lszEa6LnqNpxgxxBTFjyyjxT6e"
+    },
+    {
+      "id": 1738501283448,
+      "username": "admin----",
+      "password": "$2b$10$ybUACM0OMRsXKnq5KEpA4.6MbOpRlwAYCUK6tua/sK.0/bycS9KKC"
+    }
+  ]
+}

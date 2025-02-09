@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <h1>Welcome to your profile!</h1>
+    <div id="products"></div>
+    <div id="cart"></div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            fetch('/products')
+                .then(response => response.json())
+                .then(products => {
+                    const productsDiv = document.getElementById('products');
+                    products.forEach(product => {
+                        const productDiv = document.createElement('div');
+                        productDiv.innerHTML = `
+                            <h3>${product.name}</h3>
+                            <p>Price: ${product.price}</p>
+                            <button onclick="addToCart(${product.id})">Add to Cart</button>
+                        `;
+                        productsDiv.appendChild(productDiv);
+                    });
+                });
+
+            fetch('/cart/items')
+                .then(response => response.json())
+                .then(cart => {
+                    const cartDiv = document.getElementById('cart');
+                    cartDiv.innerHTML = '<h2>Cart</h2>';
+                    cart.forEach(item => {
+                        const itemDiv = document.createElement('div');
+                        itemDiv.innerHTML = `
+                            <p>Product ID: ${item.productId}, Quantity: ${item.quantity}</p>
+                        `;
+                        cartDiv.appendChild(itemDiv);
+                    });
+                });
+        });
+
+        function addToCart(productId) {
+            fetch('/cart/items', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify({ productId, quantity: 1 })
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.message);
+                location.reload(); // Sepeti güncellemek için sayfayı yeniden yükleyin
+            });
+        }
+    </script>
+</body>
+</html>

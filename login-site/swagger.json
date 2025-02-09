@@ -1,0 +1,299 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Login Site API",
+    "version": "1.0.0",
+    "description": "Login Site API dokümantasyonu"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000",
+      "description": "Local server"
+    }
+  ],
+  "paths": {
+    "/login": {
+      "post": {
+        "summary": "Kullanıcı girişi yapar",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Başarılı giriş"
+          },
+          "401": {
+            "description": "Başarısız giriş"
+          }
+        }
+      }
+    },
+    "/addUser": {
+      "post": {
+        "summary": "Yeni kullanıcı ekler",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              },
+              "examples": {
+                "validUser": {
+                  "summary": "Geçerli kullanıcı ekleme",
+                  "value": {
+                    "username": "validUser123",
+                    "password": "validPass123"
+                  }
+                },
+                "missingUsername": {
+                  "summary": "Eksik kullanıcı adı ile ekleme",
+                  "value": {
+                    "password": "validPass123"
+                  }
+                },
+                "missingPassword": {
+                  "summary": "Eksik şifre ile ekleme",
+                  "value": {
+                    "username": "validUser123"
+                  }
+                },
+                "shortUsername": {
+                  "summary": "Kısa kullanıcı adı ile ekleme",
+                  "value": {
+                    "username": "ab",
+                    "password": "validPass123"
+                  }
+                },
+                "specialCharacterUsername": {
+                  "summary": "Özel karakter içeren kullanıcı adı ile ekleme",
+                  "value": {
+                    "username": "user!@#",
+                    "password": "validPass123"
+                  }
+                },
+                "shortPassword": {
+                  "summary": "Kısa şifre ile ekleme",
+                  "value": {
+                    "username": "validUser123",
+                    "password": "123"
+                  }
+                },
+                "specialCharacterPassword": {
+                  "summary": "Özel karakter içeren şifre ile ekleme",
+                  "value": {
+                    "username": "validUser123",
+                    "password": "pass!@#"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Kullanıcı başarıyla eklendi"
+          },
+          "400": {
+            "description": "Geçersiz giriş"
+          }
+        }
+      }
+    },
+    "/users": {
+      "get": {
+        "summary": "Tüm kullanıcıları getirir",
+        "responses": {
+          "200": {
+            "description": "Başarılı"
+          }
+        }
+      }
+    },
+    "/users/{id}": {
+      "get": {
+        "summary": "Belirli bir kullanıcıyı ID ile getirir",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Başarılı"
+          },
+          "404": {
+            "description": "Kullanıcı bulunamadı"
+          }
+        }
+      },
+      "patch": {
+        "summary": "Belirli bir kullanıcıyı günceller",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "username": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Başarılı güncelleme"
+          },
+          "404": {
+            "description": "Kullanıcı bulunamadı"
+          },
+          "401": {
+            "description": "Error: Token is missing"
+          },
+          "403": {
+            "description": "Forbidden Error : Başka bir kullanıcının bilgilerini güncelleyemezsiniz."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      },
+      "delete": {
+        "summary": "Belirli bir kullanıcıyı siler",
+        "parameters": [
+          {
+            "in": "path",
+            "name": "id",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Başarılı silme"
+          },
+          "404": {
+            "description": "Kullanıcı bulunamadı"
+          },
+          "403": {
+            "description": "Forbidden Error : Başka bir kullanıcının bilgilerini silemezsiniz."
+          }
+        },
+        "security": [
+          {
+            "bearerAuth": []
+          }
+        ]
+      }
+    },
+    "/cart": {
+      "post": {
+        "summary": "Sepete ürün ekler",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "productId": {
+                    "type": "integer"
+                  },
+                  "quantity": {
+                    "type": "integer"
+                  }
+                }
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Ürün sepete eklendi"
+          },
+          "400": {
+            "description": "Geçersiz productId veya quantity"
+          }
+        }
+      }
+    },
+    "/cart/items": {
+      "get": {
+        "summary": "Sepetteki ürünleri getirir",
+        "responses": {
+          "200": {
+            "description": "Başarılı"
+          }
+        }
+      }
+    },
+    "/products": {
+      "get": {
+        "summary": "Tüm ürünleri getirir",
+        "responses": {
+          "200": {
+            "description": "Başarılı"
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "securitySchemes": {
+      "bearerAuth": {
+        "type": "http",
+        "scheme": "bearer",
+        "bearerFormat": "JWT"
+      }
+    }
+  }
+}
