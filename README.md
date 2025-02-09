@@ -1,35 +1,6 @@
 # REST-API-PROJECT #
+<img width="273" alt="Ekran Resmi 2025-02-09 14 43 35" src="https://github.com/user-attachments/assets/0809f241-f271-441d-9430-082bc535db1b" />
 
-├── login-site/
-│   ├── src/
-│   │   ├── app.ts
-│   │   ├── controllers/
-│   │   │   ├── authController.ts
-│   │   │   ├── cartController.ts
-│   │   │   └── productController.ts
-│   │   ├── public/
-│   │   │   ├── css/
-│   │   │   │   └── styles.css
-│   │   │   └── js/
-│   │   │       └── scripts.js
-│   │   ├── routes/
-│   │   │   └── authRoutes.ts
-│   │   ├── services/
-│   │   │   ├── authService.ts
-│   │   │   ├── cartService.ts
-│   │   │   └── productService.ts
-│   │   ├── types/
-│   │   │   └── index.ts
-│   │   ├── views/
-│   │   │   ├── login.ejs
-│   │   │   └── products-cart.ejs
-│   │   └── swagger.json
-├── tests/
-│   ├── authController.test.ts
-│   ├── cartController.test.ts
-│   └── register-validasyon.test.ts
-├── package.json
-└── tsconfig.json
 
 
 ----------------
