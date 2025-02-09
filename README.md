@@ -1,5 +1,25 @@
 # REST-API-PROJECT #
+
+Aşağıdaki gibi bir proje yapısı oluşturulmuştur:
+
+Project Structure
+
 <img width="273" alt="Ekran Resmi 2025-02-09 14 43 35" src="https://github.com/user-attachments/assets/0809f241-f271-441d-9430-082bc535db1b" />
+-------------------------------
+Kullanılan Teknolojiler ve Araçlar
+
+Express.js
+
+RESTful API sunucusunu oluşturmak için kullanılan popüler bir Node.js framework'üdür.
+
+Hızlı, minimal ve genişletilebilir bir yapı sağlar.
+
+Kaynakları yönetmek için CRUD (Oluşturma, Okuma, Güncelleme, Silme) işlemlerini uygular.
+
+Ölçeklenebilirlik ve sürdürülebilirlik için modüler ve düzenli bir kod yapısına sahiptir.
+
+JWT (JSON Web Token) ile beraber Password Hashing (bcryptjs) yöntemleri ile entegre edilmiştir.
+----------------------
 
 
 
