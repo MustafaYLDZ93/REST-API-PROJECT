@@ -53,6 +53,16 @@ PROJE YAPISI
    - Kaynakları yönetmek için CRUD (Oluşturma, Okuma, Güncelleme, Silme) işlemlerini uygular.
    - Ölçeklenebilirlik ve sürdürülebilirlik için modüler ve düzenli bir kod yapısına sahiptir.
    - JWT (JSON Web Token) ile beraber Password Hashing (bcryptjs) yöntemleri ile entegre edilmiştir.
+  
+     
+       Express ve body-parser kurmak için
+       ```
+       npm install express body-parser
+       ```
+       JWT ve BCRYPT kurmak için
+       ```
+       npm install bcryptjs jsonwebtoken
+       ```
 
 
    
@@ -66,15 +76,31 @@ PROJE YAPISI
    - Komut satırından testleri otomatize eder. (Postman'de koleksiyondaki testleri Run etme gibi) 
    - Ayrıntılı bir HTML test raporu oluşturur.
   
+       Jest & SuperTest kurmak için
+       ```
+       npm install --save-dev jest supertest
+       ```
+  
+       Test senaryolarını çalıştırın:
+       ```
+        npx jest
+        ```
+  
 
-    
+      <img width="371" alt="Ekran Resmi 2025-02-09 17 07 06" src="https://github.com/user-attachments/assets/1023f911-0796-42fe-a806-c36b6f51146b" />
 
 
-      ![Ekran Resmi 2025-01-27 19 56 41](https://github.com/user-attachments/assets/cf97cc0a-2f24-4e5e-bb57-be3fa1c76b5a)
+      
 
+
+       HTML REPORTER ile rapor almak için
+       ```
+       npm install --save-dev jest-html-reporter
+       ```
      
 
-     ![1*TP2ax7dQQXxkfS2nDo0YXg](https://github.com/user-attachments/assets/f3d13eb4-964b-42a1-aaa3-0dfa219341bc)
+        ![Ekran Resmi 2025-02-09 17 49 32](https://github.com/user-attachments/assets/9b83fb5c-128c-4aa1-a3d9-99178c072979)
+
 
      -------------------------------
 
@@ -85,8 +111,13 @@ PROJE YAPISI
    - Swagger UI kullanılarak oluşturulan etkileşimli API dokümantasyonu.
    - API dökümantasyonlarını görselleştirmek için kullanılır.
    - API'yi hem dökümante eder hem de kullanıcıların interaktif olarak test etmesine olanak sağlar.
+  
 
-
+       Swagger UI kurmak için
+       ```
+       npm install swagger-ui-express swagger-jsdoc
+       ```
+     
       
      ![Ekran Resmi 2025-02-09 17 02 48](https://github.com/user-attachments/assets/9e25a691-27f9-44b8-968a-c2761d114319)
 
@@ -122,7 +153,7 @@ Sunucu varsayılan olarak `http://localhost:3000` adresinde çalışacaktır.
 ### Testleri Çalıştırma
 Test senaryolarını çalıştırın:
 ```
-npm jest
+npx jest
 ```
 
 Testlerin ardından (eğer yapılandırılmışsa) `test-report.html` dosyasında bir HTML raporu oluşturulacaktır.
